@@ -1,0 +1,84 @@
+Program efficiency:
+
+efficiency is all about time and space complexity.
+
+Dynamic programming:
+
+In the greedy approach whatever is the sol for the prblm given at the first go is fixed as the final sol.
+
+note: This is not the best approach for all the scenarios however it also works for some approaches.
+
+In dynamic programming, we will find out all the possible sol for the given problem out of which the best will be selected.
+
+TIME AND SPACE COMPLEXITY:
+
+Asymptotic notations:
+
+1. O(N)
+2. omega
+3. Theta
+
+swajith is having 1lakh in his bank account rate of intrest is 12% for anum in the 5th month swajith is withdrawing 25000 rupees in order to buy gift for his loved once,in the 9th month 10000 rupees being deposited for his second loved once.end of the financial year how much swajith is having in his account. 
+
+
+struct
+{
+int...4
+char...1
+}
+5 bytes
+union
+{
+int...4
+char...1
+}
+8 bytes
+
+struct 
+{
+double
+char
+}
+16 bytes
+8+1+7=16
+
+struct
+{
+int
+double
+char
+}
+4+4+8+7=24
+
+
+Y
+|
+|
+20             *
+|
+10       *
+|
+5    *
+|__10_20_30____X
+
+
+
+for(i=1;1<n;i+2)
+{
+statements
+}
+n/2
+f(n)=n/2
+degree of polinomial is n so n/anything is n so here also O(n)
+so irrespective of iteration time is gonna be the same O(n)
+
+* get on integer num  as input and find sum of digits of given number.
+
+  int main()
+  {
+  int digit,num,sum=0;
+  print("enter a number");
+  scanf("%d",&num);
+  while(num<0)
+  digit=num%10
+  sum=
