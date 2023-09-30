@@ -1,0 +1,72 @@
+PROGRAM:
+after creating an array find out the smallest missing positive integer
+ code:=
+
+       def find_smallest_missing_positive(arr):
+    n = len(arr)
+    j = 0
+    for i in range(n):
+        if arr[i] <= 0:
+            arr[i], arr[j] = arr[j], arr[i]
+            j += 1
+    positive_arr = arr[j:]
+    for i in range(len(positive_arr)):
+        num = abs(positive_arr[i])
+        if num <= len(positive_arr):
+            if positive_arr[num - 1] > 0:
+                positive_arr[num - 1] = -positive_arr[num - 1]
+    for i in range(len(positive_arr)):
+        if positive_arr[i] > 0:
+            return i + 1
+    return len(positive_arr) + 1
+arr = [3, 4, -1, 1]
+result = find_smallest_missing_positive(arr)
+print("The smallest missing positive integer is:", result)
+------------------------------------------------------------------------------------------------------------------------------------------
+PROGRAM:
+In a given array every num occurs twice time and only one num occurs one time
+
+def findSingle(ar,n):
+    res=ar[0]
+    for i in range(1,n):
+        res=res^ar[i]
+        return res 
+ar=[2,3,5,4,5,3,4,2,88]
+print(findSingle(ar,len(ar)))
+------------------------------------------------------------------------------------------------------------------------------------------
+PROGRAM:
+SWAPING:
+swap 2 numbers using XOR
+a=100
+b=200
+print("a:",a,"b:",b)
+------------------------------------------------------------------------------------------------------------------------------------------
+PROGRAM:
+For given num n check the kth bit is set or not
+
+a=int(input())
+b=int(input('kth bit'))
+if n&(1<<k-1):
+    print("set")
+else:
+    print("not set")
+---------------------------------------------------------------------------------------------------------------------------------------------
+PROGRAM:
+find out xor of all n numbers
+
+code:
+n=12
+xor=0
+for i in range(1,n+1):
+    xor=xor^i
+print(xor)
+-----------------------------------------------------------------------------------------------------------------------------------------------
+PROGRAM:
+    check number odd or even
+code:=
+       n=13
+      if(n&1==0)
+      printf("even")
+else:
+      print("odd")
+--------------------------------------------------------------------------------------------------------------------------------------------------
