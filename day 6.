@@ -1,0 +1,76 @@
+def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        for j in range(0, n-i-1):
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+
+def is_sorted(arr):
+    n = len(arr)
+    for i in range(1, n):
+        if arr[i-1] > arr[i]:
+            return False
+    return True
+
+def backtrack_sort(arr, index=0):
+    n = len(arr)
+    if index == n:
+        if is_sorted(arr):
+            print(arr)  
+        return
+
+    for i in range(index, n):
+        arr[index], arr[i] = arr[i], arr[index] 
+        backtrack_sort(arr, index + 1)
+        arr[index], arr[i] = arr[i], arr[index]  
+arr = [3, 1, 2]
+backtrack_sort(arr)
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+    def find_set(arr, n, target, current_sum, start, subset, res):
+    if current_sum == target:
+        res.append(subset[:])
+        return
+    if current_sum > target or start == n:
+        return
+    for i in range(start, n):
+        subset.append(arr[i])
+        current_sum += arr[i]
+        find_set(arr, n, target, current_sum, i + 1, subset, res)
+        current_sum -= subset.pop()
+
+def find(arr, target):
+    n = len(arr)
+    res = []
+    find_set(arr, n, target, 0, 0, [], res)
+    return res
+
+a = [8, 9, 6, 5, 4, 3, 26, 2]
+sum_input = int(input("Enter the target: "))
+
+if sum_input > sum(a) or sum_input < min(a):
+    print("Impossible")
+elif sum_input == sum(a):
+    print("Only one set is possible, i.e.,", a)
+else:
+    result = find(a, sum_input)
+    if not result:
+        print("No subsets found with the given target.")
+    else:
+        print("Subsets that sum up to the target:")
+        for subset in result:
+            print(subset)
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
+      def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        swapped = False
+        for j in range(0, n-i-1):
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+                swapped = True
+        if not swapped:
+            break
+arr = [64, 34, 25, 12, 22, 11, 90]
+bubble_sort(arr)
+print("Sorted array:", arr)
