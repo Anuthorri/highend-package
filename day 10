@@ -1,0 +1,105 @@
+def sep_odd(input_string):
+    oddstring=" "
+    for i in range(len(input_string)):
+        if i%2 !=0:
+            oddstring=oddstring+str(int(input_string[i])**2)
+    return oddstring
+s=input()
+print(sep_odd(s)[:5:])
+-----------------------------------------------------------------------------------------------------------------
+PROGRAM:=
+
+s=input()
+loss=s.split(',')
+op=''
+for i in loss:
+    nc=i.split(':')
+    name=nc[0]
+    code=nc[1]
+    max=0
+    for i in code:
+        if int(i)>max and int(i)<=len(name):
+            max=int(i)
+    if max==0:
+        
+        op+='X'
+    else:
+        op+=name[max-1]
+print(op)
+------------------------------------------------------------------------------------------------------------------------
+Balanced brackets code:
+def demo(s):
+    c=0 
+    l=[]
+    for i in s:
+        if i=='[' or i=='{' or i=='(':
+            l.append(i)
+            c+=1
+            continue
+        if len(l)==0:
+            return c+1
+        temp=l.pop()
+        if  temp=='(' and i==')':
+            c+=1
+        elif temp=='[' and i==']':
+            c+=1
+        elif temp=='{' and i=='}':
+            c+=1
+        else:
+            return c+1
+    if len(l)==0:
+        return 0
+    else:
+        return c+1
+s=input()
+if __name__=='__main__':
+    print(demo(s))
+--------------------------------------------------------------------------------------------------------------------------------
+def demo(s):
+    l=[]
+    for i in s:
+        if i.isalpha():
+            l.append(i)
+        else:
+            spc=i
+            idxspc=s.index(i)
+    l.reverse()
+    l.insert(idxspc,spc)
+    return''.join(l)
+s=input()
+print(demo(s))
+-----------------------------------------------------------------------------------------------------------------------------------
+def demo(s):
+    los=s.split(',')
+    idxpof=los.index('4')
+    idxpos=los.index('7')
+    n1,n2=0,''
+    for i in los[:idxpof]+los[idxpos+1:]:
+        n1+=int(i)
+    for i in los[idxpof:idxpos+1]:
+        n2+=i
+    return (n1+int(n2))
+s=input()
+if __name__=='__main__':
+    print(demo(s))
+-------------------------------------------------------------------------------------------------------------------------------------
+two pointersapporch(2 pointers in one loop)code
+
+def two_pointer_example(arr, target):
+    left = 0
+    right = len(arr) - 1
+
+    while left < right:
+        current_sum = arr[left] + arr[right]
+
+        if current_sum == target:
+            print("Found pair:", arr[left], arr[right])
+            left += 1
+            right -= 1
+        elif current_sum < target:
+            left += 1
+        else:
+            right -= 1
+arr = [2,3,5,7,10,12,15,20]
+target = 19
+two_pointer_example(arr, target)
