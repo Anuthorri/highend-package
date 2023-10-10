@@ -1,0 +1,40 @@
+TOWER OF HONOI:=
+def TOH(n, src, aux, dest):
+    if n <= 1:
+        print(src + " -> " + dest)
+        return
+    TOH(n-1, 'src', 'dest', 'aux')
+    print(src + " -> " + dest)
+    TOH(n-1, 'aux', 'src', 'dest')
+n = 4
+TOH(n, 'src', 'aux', 'dest')
+Program
+row sum:=
+for row in arr:
+    if sum(row) != 15:
+        return False
+
+col sum:=
+for i in range(len(arr)):
+    temp = 0
+    for j in range(len(arr))
+        temp += arr[j][i]
+    if temp != 15:
+        return False
+
+diag1 sum:=
+for i in range(len(arr)):
+    for j in range(len(arr))
+        if i == j:
+            temp += arr[i][j]
+if temp != 15:
+    return False
+
+diag2 sum:=
+i=0, j=n-1
+while i < n and j >=0:
+    temp += arr[i][j]
+    i += 1
+    j -= 1
+if temp != 15;
+    return False
